@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+
+   
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 500px;
+
+    border: 1px solid ;
+    padding: 20px;
+}
+
+#name,
+#rollno,
+#course,
+#marks {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 230px;
+}
+
+input,
+select {
+    width: 130px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 8px;
+}
+
+#search {
+    width: 100%;
+}
+
+#search-input {
+    width: 100%;
+    padding: 8px;
+}
+
+#submit {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+hr {
+    width: 500px;
+}
+
+#form-title {
+    text-align: center;
+    width: 100%;
+}
+
+#total-average {
+    display: flex;
+    gap: 20px;
+    width: 500px;
+    justify-content: center;
+}

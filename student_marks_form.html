@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stu_marks_form.css">
+    <title>Student Management System</title>
+</head>
+<body >
+    <center>
+
+    <form>
+         <h1 id="form-title">Student Management System</h1>
+
+        <div id="name">
+            <label>Name:</label>
+            <input type="text" placeholder="Enter Name">
+        </div>
+
+        <div id="rollno">
+            <label>Roll No:</label>
+            <input type="number" placeholder="Enter Roll No">
+        </div>
+
+        <div id="course">
+            <label>Course:</label>
+            <select>
+                <option value="">Select Course</option>
+                <option value="cse">CSE</option>
+                <option value="cse ds">CSE DS</option>
+                <option value="ece">ECE</option>
+                <option value="aiml">AIML</option>
+            </select>
+        </div>
+
+        <div id="marks">
+            <label>Marks:</label>
+            <input type="number" placeholder="Enter Marks">
+        </div>
+
+        <div id="submit">
+        <button type="button">Add Student</button>
+        </div>
+        
+        <hr>
+
+        <div id="search">
+            <input type="text" id="search-input" placeholder="Search by name or roll">
+        </div>
+
+        <div id="total-average">
+            <input type="text" id="total-students" placeholder="Total Students">
+            <input type="text" id="average-marks" placeholder="Average Marks">
+        </div>
+
+        <br>
+
+
+        <table border="1" id="student-table" align="center" cellspacing="0" cellpadding="10">
+
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Roll No</th>
+                    <th>Course</th>
+                    <th>Marks</th>  
+                    <th>Grade</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="student-table-body">
+            </tbody>
+        </table>
+
+    </form>
+
+    </center>
+
+    
+      <script>
+
+        function addStudent() {
+
+            let name = document.getElementById("name").value;
+            let rollno = document.getElementById("rollno").value;
+            let course = document.getElementById("course").value;
+            let marks = document.getElementById("marks").value;
+
+            let table = document.getElementById("studentTable");
+
+            let row = table.insertRow();
+
+            row.insertCell(0).innerHTML = name;
+            row.insertCell(1).innerHTML = rollno;
+            row.insertCell(2).innerHTML = course;
+            row.insertCell(3).innerHTML = marks;
+
+            document.getElementById("name").value = "";
+            document.getElementById("rollno").value = "";
+            document.getElementById("course").value = "";
+            document.getElementById("marks").value = "";
+        }
+
+    </script>
+
+
+</body>
+</html>

@@ -1,58 +1,40 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const navItemStyle = {
+    cursor: "pointer",
+    userSelect: "none"
+  };
+
   return (
-    <div style={{
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      backgroundColor: '#061B33',
-      color: '#FFFFFF',
-      padding: '10px 25px'
-    }}>
-
-      <h2 style={{ color: '#94e7f5' }}>
-        My Store
-      </h2>
-
-      <div style={{ display: 'flex', gap: '20px' }}>
-        <a href="/" style={{
-          color: '#FFFFFF',
-          textDecoration: 'none'
-        }}>Home</a>
-
-        <a href="/about" style={{
-          color: '#A58BFA',
-          textDecoration: 'none'
-        }}>About</a>
-
-        <a href="/products" style={{
-          color: '#FB9A1E',
-          textDecoration: 'none'
-        }}>Products</a>
-
-        <a href="/cart" style={{
-          color: '#20B685',
-          textDecoration: 'none'
-        }}>Cart</a>
-
-        <a href="/contact" style={{
-          color: '#FF5740',
-          textDecoration: 'none'
-        }}>Contact</a>
-      </div>
-
-      <button style={{
-        backgroundColor: '#E6FB3F',
-        color: '#061B33',
-        border: 'none',
-        padding: '10px 15px',
-        borderRadius: '5px',
-        cursor: 'pointer'
+    <div>
+      <nav style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        backgroundColor: "navy",
+        color: "white",
+        padding: "15px 25px",
+        fontSize: "18px"
       }}>
-        Login
-      </button>
+        <div style={{ fontSize: "24px", fontWeight: "bold", cursor: "pointer" }} onClick={() => navigate("/")}>
+          Myapp
+        </div>
 
+        <div style={{
+          display: "flex",
+          gap: "25px"
+        }}>
+          <div style={navItemStyle} onClick={() => navigate("/")}>Home</div>
+          <div style={navItemStyle} onClick={() => navigate("/product")}>Products</div>
+          <div style={navItemStyle} onClick={() => navigate("/about")}>About</div>
+          <div style={navItemStyle} onClick={() => navigate("/cart")}>Cart</div>
+        </div>
+
+      </nav>
     </div>
   );
 };
